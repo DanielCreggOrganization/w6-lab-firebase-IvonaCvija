@@ -4,6 +4,9 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -12,37 +15,13 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideFirebaseApp(() => initializeApp({
       projectId: "fir-ionic-project-dc52e",
-      appId: "1:769063483414:web:0b402d09efd31d324dca57",
+      appId: "1:769063383414:web:0b402d09efd31d324dca57",
       storageBucket: "fir-ionic-project-dc52e.appspot.com",
-      apiKey: "AIzaSyDibzo0p2mUnQmjN6RlfXlHjbgkzSIUjFY",
+      apiKey: "AIzaSyDibno0p2mUnQmjN6RlfXlHjbguzSIUjFY",
       authDomain: "fir-ionic-project-dc52e.firebaseapp.com",
-      messagingSenderId: "769063383314"
+      messagingSenderId: "769063383414"
     })),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],
 });
-function provideFirebaseApp(arg0: () => any): import("@angular/core").Provider | import("@angular/core").EnvironmentProviders {
-  throw new Error('Function not implemented.');
-}
-
-function initializeApp(arg0: { projectId: string; appId: string; storageBucket: string; apiKey: string; authDomain: string; messagingSenderId: string; }) {
-  throw new Error('Function not implemented.');
-}
-
-function provideAuth(arg0: () => any): import("@angular/core").Provider | import("@angular/core").EnvironmentProviders {
-  throw new Error('Function not implemented.');
-}
-
-function getAuth() {
-  throw new Error('Function not implemented.');
-}
-
-function provideFirestore(arg0: () => any): import("@angular/core").Provider | import("@angular/core").EnvironmentProviders {
-  throw new Error('Function not implemented.');
-}
-
-function getFirestore() {
-  throw new Error('Function not implemented.');
-}
-

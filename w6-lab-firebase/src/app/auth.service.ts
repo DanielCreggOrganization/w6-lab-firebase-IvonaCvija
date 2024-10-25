@@ -60,7 +60,7 @@ export class AuthService {
    * Gets the current authenticated user
    * @returns The current User or null
    */
-  getCurrentUser(): User | null {
+  fetchActiveUser(): User | null {
     return this.firebaseAuth.currentUser;
   }
 
@@ -69,7 +69,9 @@ export class AuthService {
    * @param userEmail - The email address for password reset
    * @returns Promise resolving when email is sent
    */
-
+  async initiatePasswordReset(userEmail: string): Promise<void> {
+    return sendPasswordResetEmail(this.firebaseAuth, userEmail);
+  }
 
   /**
    * Signs out the current user
